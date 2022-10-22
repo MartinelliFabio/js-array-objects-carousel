@@ -94,3 +94,7 @@ function imgPrecedente () {
     showImg();
     imgPiccoleActive[index].classList.add('active');
 }
+
+// BONUS 2: Aggiungere funzionalità di autoplay: dopo un certo periodo di tempo (3 secondi) l’immagine attiva dovrà cambiare alla successiva.
+
+setInterval(imgSuccessiva, 3000);
