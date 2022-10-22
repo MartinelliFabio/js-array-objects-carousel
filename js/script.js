@@ -55,3 +55,48 @@ const images = [
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
     },
 ];
+
+// Creo le variabili bottoni dai
+const frecciaDestraHTML = document.getElementById('right-arrow');
+const frecciaSinistraHTML = document.getElementById('left-arrow');
+
+//Milestone 0: Come sempre focalizziamoci prima sulla creazione del markup statico: costruiamo il container e inseriamo l'immagine grande in modo da poter stilare lo slider.
+
+// Crea il div con classe row per appenderlo al div containerHTML
+const containerHTML = document.getElementById('container');
+appendiDiv('div', 'row', containerHTML);
+imgGrande(); // Richiamo la funzione per "creare" l'immagine grande
+
+const imgGrandiHTML = document.querySelectorAll('.img-grande');
+const titleHTML = document.querySelectorAll('.title');
+const descriptionHTML = document.querySelectorAll('.description');
+
+// Milestone 1: Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per popolare dinamicamente il carosello. Al click dell'utente sulle frecce verso sinistra o destra, l'immagine attiva diventerà visibile e dovremo aggiungervi titolo e testo.
+
+// Crea il div con classe row per appenderlo al div containerPiccoleHTML
+const containerPiccoleHTML = document.getElementById('container-piccole');
+appendiDiv('div', 'row row-piccole', containerPiccoleHTML);
+
+
+// BONUS 1: Aggiungere le thumbnails (sottoforma di miniatura) ed al click attivare l’immagine corrispondente.
+
+let contatore = 0; // Inizialillo un contatore a 0 per contare l'immagini
+showImg(); // Richiamo la funzione per visualizzare l'immagine grande
+imgPiccole(); // Richiamo la funzione per "creare" tutte le immagine piccole
+
+// Sezione per selezionari l'immagine piccola e aggiungere la classe active per visualizzare quella selezionata
+const imgPiccoleActive = document.querySelectorAll('.img-piccole');
+let index = 0; // Inizializzo un index a 0 per contare l'immagini
+imgPiccoleActive[index].classList.add('active');  
+
+// Click frecce destra e sinistra
+frecciaDestraHTML.addEventListener('click', imgSuccessiva);
+frecciaSinistraHTML.addEventListener('click', imgPrecedente);
+
+
+
+
+
+
+
+
