@@ -60,6 +60,11 @@ const images = [
 const frecciaDestraHTML = document.getElementById('right-arrow');
 const frecciaSinistraHTML = document.getElementById('left-arrow');
 
+// Bottoni per l'autoplay: Start, Inverti e Stop
+const bottoneStartHTML = document.getElementById('start');
+const bottoneInvertiHTML = document.getElementById('inverti');
+const bottoneStopHTML = document.getElementById('stop');
+
 //Milestone 0: Come sempre focalizziamoci prima sulla creazione del markup statico: costruiamo il container e inseriamo l'immagine grande in modo da poter stilare lo slider.
 
 // Crea il div con classe row per appenderlo al div containerHTML
@@ -88,6 +93,13 @@ imgPiccole(); // Richiamo la funzione per "creare" tutte le immagine piccole
 const imgPiccoleActive = document.querySelectorAll('.img-piccole');
 let index = 0; // Inizializzo un index a 0 per contare l'immagini
 imgPiccoleActive[index].classList.add('active');  
+
+
+// BONUS 2: Aggiungere funzionalità di autoplay: dopo un certo periodo di tempo (3 secondi) l’immagine attiva dovrà cambiare alla successiva.
+
+// BONUS 3: Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
+timer(); // Richiamo la funzione timer
+
 
 // Click frecce destra e sinistra
 frecciaDestraHTML.addEventListener('click', imgSuccessiva);

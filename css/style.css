@@ -1,5 +1,32 @@
+:root {
+    --white: #ffffff;
+    --celeste: #caf0f8;
+    --celeste2: #ade8f4;
+    --blue: #00b4d8;
+    --green: #a7c957;
+    --red: #e63946;
+}
+
+body {
+    background-color: var(--celeste);
+}
+
+header, footer {
+    height: 70px;
+    background-color: var(--white);
+}
+
+main {
+    height: calc(100vh - 140px);
+    overflow-y: auto;
+}
+
 img {
     width: 100%;
+}
+
+.my-text-blue {
+    color: var(--blue);
 }
 
 .img-piccole {
@@ -21,7 +48,7 @@ img {
 }
 
 .img-grande {
-    height: 600px;
+    height: 550px;
     object-fit: cover;
     display: none;
 }
@@ -80,4 +107,56 @@ img {
     font-size: 50px;
     cursor: pointer;
     transform: translateY(-50%);
+}
+
+.bottone {
+    border-radius: 10px;
+    padding: 3px 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+#start {
+    background-color: var(--green);
+    border: 1px solid var(--green);
+}
+
+#inverti {
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+}
+
+#stop {
+    background-color: var(--red);
+    border: 1px solid var(--red);
+}
+
+footer a {
+    color: var(--blue);
+}
+
+/* ! Effetti Hover */
+button:hover {
+    opacity: 80%;
+    transition: 0.1s;
+}
+
+#start:hover {
+    outline: 3px solid var(--green);
+    outline-offset: 3px;
+}
+
+#inverti:hover {
+    outline: 3px solid var(--blue);
+    outline-offset: 3px;
+}
+
+#stop:hover {
+    outline: 3px solid var(--red);
+    outline-offset: 3px;
+}
+
+footer a:hover {
+    transition: 0.4s;
 }

@@ -97,4 +97,21 @@ function imgPrecedente () {
 
 // BONUS 2: Aggiungere funzionalità di autoplay: dopo un certo periodo di tempo (3 secondi) l’immagine attiva dovrà cambiare alla successiva.
 
-setInterval(imgSuccessiva, 3000);
+// BONUS 3: Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
+
+// Funzione timer per l'azione di start, inverti e stop del carousel
+function timer() {
+    let interval;
+    bottoneStartHTML.addEventListener('click', () => {
+        clearInterval(interval);
+        interval = setInterval(imgSuccessiva, 3000);
+    });
+    bottoneInvertiHTML.addEventListener('click', () => {
+        clearInterval(interval);
+        interval = setInterval(imgPrecedente, 3000);
+    });
+    bottoneStopHTML.addEventListener('click', () => {
+        clearInterval(interval);
+    });
+}
+
